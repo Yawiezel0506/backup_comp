@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Box</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100vh;
+        flex-direction: column;
+      }
+      #play_with_box {
+        width: 25%;
+        height: 25vh;
+        background: #000;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div id="play_with_box"></div>
+      <button class="btn btn-info my-2" id="change_random">
+        Change random color
+      </button>
+      <select class="select" id="select_color">
+        <option value="coral">coral</option>
+        <option value="red">red</option>
+        <option value="blue">blue</option>
+        <option value="green">green</option>
+        <option value="yellow">yellow</option>
+        <option value="purple">purple</option>
+      </select>
+      <button class="btn btn-success my-2" id="choose_color">
+        Choose color
+      </button>
+      <input class="input-group" id="color_text" type="text">
+      <button class="btn btn-primary my-2" id="add_btn">Add color</button>
+      <button class="btn btn-danger my-2" id="show-hide">Hide</button>
+      <script src="index.js"></script>
+    </div>
+  </body>
+</html>

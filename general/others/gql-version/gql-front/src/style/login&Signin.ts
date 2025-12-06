@@ -1,0 +1,1 @@
+export const styleButton = { color: "white", backgroundColor: "#37474f" }

@@ -1,0 +1,24 @@
+1) cls -- clear
+2) show dbs
+3) use --- move & create
+4) db.createCollection("name") --- add collection to the db 
+5) db.dropDatabase() -- delete the db
+
+6) db.collectionName.insertOne({key:value})  -- insert one document into a collection
+7) db.collectionName.find({})   ---- find all documents in a collection
+8) db.collectionName.insertMany([{},{},{}])
+
+9) dataTypes: string, int, double, null, boolean, date, array, nested-object
+
+10) db.collection.find().sort({name: 1 / -1}) --- sort by alfabetycal order
+11)db.collectionName.find().sort({gpa:1 / -1})  ---sort by int order
+12) db.collectionName.find().sort().limit(1) --- filter of results and get the one you want
+
+13)db.collectionName.name({name: value, secondName: value})
+13)db.collectionName.name({}, {name:true, _id:false})
+
+14) db.collectionName.updateOne(filter, update)
+14) db.collectionName.updateOne({name: "Sandy"}, {$set:{fullTime:true}})
+14) db.collectionName.updateOne({name: "Sandy"}, {$unset:{fullTime:""}})
+14) db.collectionName.updateMany({}, {$set:{fullTime:false}})
+

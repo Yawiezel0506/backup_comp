@@ -1,0 +1,115 @@
+-- 1)
+
+-- SELECT c.contact_name
+-- FROM customers as c
+-- WHERE c.customer_id NOT IN (
+--     SELECT customer_id
+--     FROM orders
+-- )
+
+-- 2)
+
+-- SELECT company_name
+-- FROM customers as c
+-- WHERE c.customer_id IN (
+--     SELECT customer_id
+--     FROM orders
+--     GROUP BY customer_id
+--     HAVING COUNT(order_id) > 10
+-- )
+
+-- 3)
+
+-- SELECT product_name, unit_price
+-- FROM products as p
+-- WHERE p.unit_price > (
+--     SELECT avg(unit_price)
+--     FROM products
+-- )
+
+-- 4)
+
+-- SELECT p.product_name
+-- FROM products as p
+-- WHERE p.product_id NOT IN (
+--     SELECT product_id
+--     FROM order_details
+-- )
+
+-- 5)
+
+-- SELECT DISTINCT country
+-- FROM customers as c
+-- WHERE c.country IN (
+--     SELECT country
+--     FROM customers
+--     GROUP BY country
+--     HAVING COUNT(customer_id) >= 5
+-- );
+
+-- 6)
+
+-- SELECT c.company_name
+-- FROM customers as c
+-- WHERE c.customer_id NOT IN (
+--     SELECT customer_id
+--     FROM orders as o
+--     WHERE EXTRACT(YEAR FROM o.order_date) = 1998
+-- )
+
+-- 7)
+
+-- SELECT c.company_name, country
+-- FROM customers as c
+-- WHERE c.customer_id IN (
+--     SELECT customer_id
+--     FROM orders as o
+--     WHERE EXTRACT(YEAR FROM o.order_date) > 1980 
+-- ) AND c.country = 'USA'
+
+-- 8)
+
+-- SELECT c.contact_name
+-- FROM customers as c
+-- WHERE c.customer_id IN (
+--     SELECT customer_id
+--     FROM orders as o
+--     GROUP BY customer_id
+--     HAVING count(order_id) = 3
+-- )
+
+
+-- 10)
+
+-- SELECT *
+-- FROM suppliers as s
+-- WHERE s.supplier_id IN(
+--     SELECT supplier_id
+--     FROM products as p
+--     GROUP BY supplier_id
+--     HAVING count(product_id) >= 1
+-- ) AND s.country = 'USA'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

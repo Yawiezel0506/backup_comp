@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <title>ysw site</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      nav {
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: #fff;
+      }
+
+      nav ul {
+        list-style-type: none;
+        display: flex;
+      }
+
+      nav ul li {
+        margin-left: 10px;
+      }
+
+      h2 {
+        font-size: 24px;
+        color: #333;
+        margin-top: 20px;
+      }
+
+      p {
+        color: #666;
+        margin-bottom: 20px;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        margin: 20px;
+      }
+
+      section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      section > div {
+        width: 45%;
+      }
+
+      .book-list {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .book-list li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .book-list img {
+        width: 100px;
+        height: auto;
+        margin-right: 10px;
+      }
+
+      .book-list h3 {
+        margin: 0;
+        font-size: 18px;
+      }
+
+      .book-list p {
+        margin: 5px 0px;
+        font-size: 14px;
+      }
+
+      footer {
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      footer div {
+        margin-right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <nav>
+        <a href="#">
+          <img src="book.jpg" alt="logo" width="100" height="60" />
+        </a>
+        <div>
+          <ul>
+            <li>
+              <a href="about.html">about</a>
+            </li>
+            <li>
+              <a href="page2.html">page b</a>
+            </li>
+            <li>
+              <a href="page3.html">page c</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div>
+      <div>
+        <div>
+          <div style="display: flex">
+            <div>
+              <img
+                src="book.jpg"
+                alt="self image"
+                style="max-width: 100%; width: 300px; height: auto"
+              />
+            </div>
+            <div style="margin: 20px">
+              <h2>Name: Yonathan Simcha Wiesel</h2>
+              <p>
+                Hey everyone, my name is yonathan simcha wiesel, I am an
+                undergraduate student at the University of California Los
+                Angeles (UCLA). I am married to Adina and I have 2 beautiful
+                children
+              </p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <ul class="book-list">
+            <li>
+              <img src="book.jpg" alt="Book 1" />
+              <div>
+                <h3>
+                  <a
+                    href="https://www.hamadaf-y.co.il/%D7%97%D7%A0%D7%95%D7%AA/%D7%A1%D7%A4%D7%A8%D7%99-%D7%94%D7%9C%D7%9B%D7%94/%D7%A9%D7%90%D7%9C%D7%95%D7%AA-%D7%95%D7%AA%D7%A9%D7%95%D7%91%D7%95%D7%AA-%D7%A9%D7%95%D7%AA%D7%99%D7%9D/%D7%A9%D7%95%D7%AA-%D7%A8%D7%91%D7%99-%D7%A2%D7%A7%D7%99%D7%91%D7%90-%D7%90%D7%99%D7%92%D7%A8-%D7%94-%D7%9B%D7%A8%D7%9B%D7%99%D7%9D-%D7%94%D7%9E%D7%90%D7%95%D7%A8/"
+                    >Rabi Akiva Aiger</a
+                  >
+                </h3>
+                <p>Short description of Book 1.</p>
+              </div>
+            </li>
+            <li>
+              <img src="book.jpg" alt="Book 2" />
+              <div>
+                <h3>
+                  <a
+                    href="https://www.hamadaf-y.co.il/%D7%97%D7%A0%D7%95%D7%AA/%D7%A1%D7%A4%D7%A8%D7%99-%D7%94%D7%9C%D7%9B%D7%94/%D7%9E%D7%A9%D7%A0%D7%94-%D7%AA%D7%95%D7%A8%D7%94-%D7%9C%D7%A8%D7%9E%D7%91%D7%9D/%D7%9E%D7%A9%D7%A0%D7%94-%D7%AA%D7%95%D7%A8%D7%94-%D7%9C%D7%A8%D7%9E%D7%91%D7%9D-%D7%92%D7%93%D7%95%D7%9C-%D7%A4%D7%A8%D7%A0%D7%A7%D7%9C-%D7%97%D7%93%D7%A9/"
+                    >Rambam</a
+                  >
+                </h3>
+                <p>Short description of Book 2.</p>
+              </div>
+            </li>
+            <li>
+              <img src="book.jpg" alt="Book 3" />
+              <div>
+                <h3>
+                  <a
+                    href="https://www.hamadaf-y.co.il/%D7%97%D7%A0%D7%95%D7%AA/%D7%AA%D7%95%D7%A8%D7%94-%D7%A0%D7%91%D7%99%D7%90%D7%99%D7%9D-%D7%9B%D7%AA%D7%95%D7%91%D7%99%D7%9D/%D7%97%D7%95%D7%9E%D7%A9%D7%99%D7%9D/%D7%97%D7%95%D7%9E%D7%A9-%D7%A8%D7%90%D7%A9%D7%95%D7%A0%D7%99-%D7%A4%D7%A8%D7%A9%D7%A0%D7%99-%D7%A8%D7%A9%D7%99-%D7%A4%D7%99%D7%9C%D7%99%D7%A4/"
+                    >Rashi</a
+                  >
+                </h3>
+                <p>Short description of Book 3.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div>Details</div>
+      <div>Planes from the course</div>
+      <div>Hobbies</div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,98 @@
+-- 1)
+
+-- SELECT employees.employee_id, employees.first_name, COUNT(orders.order_id) AS num_of_orders
+-- FROM employees
+-- left JOIN orders ON employees.employee_id = orders.employee_id
+-- GROUP BY employees.employee_id, employees.first_name
+-- ORDER BY num_of_orders
+
+-- 2)
+
+-- SELECT categories.category_id, categories.category_name, SUM(products.units_on_order) AS num_of_orders
+-- FROM categories
+-- LEFT JOIN products ON products.category_id = categories.category_id
+-- GROUP BY categories.category_id, categories.category_name
+-- ORDER BY num_of_orders DESC
+
+-- 3)
+
+
+-- SELECT sq.customer_id, sq.company_name, round(AVG(sq.sumation)) AS average
+-- FROM (
+--     SELECT c.customer_id, c.company_name, o.order_id, sum(od.unit_price * od.quantity) as sumation
+--     FROM customers as c
+--     INNER JOIN orders as o ON o.customer_id = c.customer_id
+--     LEFT JOIN order_details as od ON o.order_id = od.order_id
+--     GROUP BY o.order_id, c.customer_id
+-- ) as sq
+-- GROUP BY sq.customer_id, sq.company_name
+-- ORDER BY average DESC
+
+
+-- 4)
+
+-- SELECT sq.customer_id, sq.company_name, round(SUM(sq.sumation)) AS average
+-- FROM (
+--     SELECT c.customer_id, c.company_name, o.order_id, sum(od.unit_price * od.quantity) as sumation
+--     FROM customers as c
+--     INNER JOIN orders as o ON o.customer_id = c.customer_id
+--     LEFT JOIN order_details as od ON o.order_id = od.order_id
+--     GROUP BY o.order_id, c.customer_id
+-- ) as sq
+-- GROUP BY sq.customer_id, sq.company_name
+-- ORDER BY average DESC
+-- LIMIT 10
+
+-- 5)
+
+
+-- SELECT EXTRACT(MONTH FROM o.order_date) AS month_value,
+-- ROUND(SUM(od.unit_price * od.quantity)) as "total monthly payment"
+-- FROM orders as o
+-- LEFT JOIN order_details as od ON od.order_id = o.order_id
+-- GROUP BY month_value
+-- ORDER BY month_value
+
+-- 6)
+
+-- SELECT p.product_name, p.units_in_stock
+-- FROM products as p
+-- WHERE p.units_in_stock < 10
+-- ORDER BY p.units_in_stock DESC
+
+-- 7)
+
+-- SELECT subquery.customer_id, c.company_name, round(AVG(subquery.total_order_amount)) AS average_order_amount
+-- FROM (
+--     SELECT o.customer_id, SUM(od.unit_price * od.quantity) AS total_order_amount
+--     FROM orders AS o
+--     JOIN order_details AS od ON o.order_id = od.order_id
+--     GROUP BY o.customer_id
+-- ) AS subquery
+-- JOIN customers AS c ON subquery.customer_id = c.customer_id
+-- GROUP BY subquery.customer_id, c.company_name
+-- ORDER BY average_order_amount DESC
+-- LIMIT 1;
+
+-- 8)
+
+-- SELECT O.ship_country, round(sum(od.unit_price * od.quantity)) AS total_order_amount
+-- FROM orders as o
+-- INNER JOIN order_details AS od ON o.order_id = od.order_id
+-- GROUP BY O.ship_country
+-- ORDER BY total_order_amount DESC
+
+-- 9)
+
+-- SELECT s.company_name, COUNT(o.order_id) as num_of_orders
+-- FROM shippers as s
+-- INNER JOIN orders as o ON o.ship_via = s.shipper_id
+-- GROUP BY s.company_name
+-- ORDER BY num_of_orders DESC
+
+-- 10)
+
+-- SELECT p.product_name, COUNT(od.order_id) as num_of_orders
+-- FROM products as p
+-- LEFT JOIN order_details as od ON od.product_id = p.product_id
+-- GROUP BY p.product_name

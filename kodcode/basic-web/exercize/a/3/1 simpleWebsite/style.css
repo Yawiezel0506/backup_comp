@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+}
+
+.header {
+  background: black;
+  color: white;
+  text-align: center;
+}
+
+.second-header {
+  background: grey;
+  color: white;
+  text-align: center;
+}
+
+#about {
+  text-align: center;
+  color: red;
+}
+
+#contact {
+  font-size: 26;
+  font-weight: bold;
+}
+
+.yellow-square {
+  width: 200px;
+  height: 200px;
+  background: yellow;
+  box-shadow: 9px 6px 75px 14px rgba(0, 0, 0, 0.64);
+  -webkit-box-shadow: 9px 6px 75px 14px rgba(0, 0, 0, 0.64);
+  -moz-box-shadow: 9px 6px 75px 14px rgba(0, 0, 0, 0.64);
+}
+
+.footer {
+  background: black;
+  color: white;
+  text-align: center;
+}

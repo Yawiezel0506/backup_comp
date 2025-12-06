@@ -1,0 +1,34 @@
+{
+  "users": [
+    {
+      "email": "israel@gmail.com",
+      "password": "Harabi@777",
+      "_id": "03e09c10-2186-11ee-a0cb-5bab21a5590a"
+    },
+    {
+      "email": "business@gmail.com",
+      "password": "$2a$10$ALKb/EaCx98YmJBiOVJ8W.zD.LxJ47Yk.xJTuD.ZwQNMCu.K6SC8.",
+      "_id": "03ebbfa0-2186-11ee-a0cb-5bab21a5590a"
+    },
+    {
+      "email": "admin@gmail.com",
+      "password": "$2a$10$s77z5.FPDrNHz4dad84oK.u4M8BiyFZWku.47bH5UOJL/WztS.qVi",
+      "_id": "03f75860-2186-11ee-a0cb-5bab21a5590a"
+    },
+    {
+      "email": "yawiezel@gmail.com",
+      "password": "$2a$10$HEtxXQ5flVF761LcLH7ny.BF/Wf/smwogGTXts6wgUc5aaOVp1fAG",
+      "_id": "3ac838a0-5075-11ee-ae06-83d6f8684a19"
+    },
+    {
+      "email": "regular@gmail.com",
+      "password": "$2a$10$eGJFU6Vx.1BpaPL8Howp6ehOsRVvJ6Iw8Z5IKImYNXySBCc2DifoG",
+      "_id": "6f485a70-50a6-11ee-b5e2-a30704e8dbee"
+    },
+    {
+      "email": "yswiezel@gmail.com",
+      "password": "$2a$10$VYnp.doPirJ07x2YScnOS.zqEcswBoX.4GKdEXETqj2Qus3sFi9OS",
+      "_id": "a630ac90-512d-11ee-b561-5f533ac833c2"
+    }
+  ]
+}

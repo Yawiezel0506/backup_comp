@@ -1,0 +1,72 @@
+@import url('https://fonts.cdnfonts.com/css/harry-potter');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Harry Potter', sans-serif;
+                                                
+}
+
+.header {
+  background: black;
+  display: flex;
+  justify-content: space-between;
+}
+.header a {
+  color: white;
+  text-decoration: none;
+  background: black;
+}
+
+.main {
+  height: 60vh;
+  background: lightskyblue;
+  display: flex;
+  justify-content: start;
+}
+
+.main .left-main {
+  background: rgb(65, 65, 56);
+  width: 25vw;
+  color: white;
+}
+
+.menu-item {
+  background: orange;
+  margin: 0 0 4px 0;
+  
+}
+
+.menu-item:last-of-type {
+  height: 30vh;
+  background: rgb(65, 65, 56);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-item:last-of-type span {
+  background: coral;
+}
+.right-main {
+  width: 75vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("harry.jpg");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  font-size: large;
+}
+.footer {
+  background: black;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}

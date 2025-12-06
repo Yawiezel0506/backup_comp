@@ -1,0 +1,128 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "mongo-project",
+    "dateExported": "2023-09-11T07:47:54.596Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "825a0ec5-e143-4beb-8a44-495582c0a246",
+            "colId": "0d72f4b0-b46d-4d92-a8e1-1c1d69de84f6",
+            "containerId": "",
+            "name": "get all",
+            "url": "localhost:8181/api/users",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-09-11T07:30:06.080Z",
+            "modified": "2023-09-11T07:30:11.220Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "21c18918-5b06-4111-ad10-12b082005bfd",
+            "colId": "0d72f4b0-b46d-4d92-a8e1-1c1d69de84f6",
+            "containerId": "",
+            "name": "register",
+            "url": "localhost:8181/api/users",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-09-11T07:30:44.160Z",
+            "modified": "2023-09-11T07:31:32.340Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\":\"yawiezel@gmail.com\",\n  \"password\":\"Yawiezel@0506\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "8055512a-736a-4142-805d-58a0db6fe997",
+            "colId": "0d72f4b0-b46d-4d92-a8e1-1c1d69de84f6",
+            "containerId": "",
+            "name": "kogin",
+            "url": "localhost:8181/api/users/login",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2023-09-11T07:32:45.093Z",
+            "modified": "2023-09-11T07:33:08.696Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\":\"yawiezel@gmail.com\",\n  \"password\":\"Yawiezel@0506\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "152d4a6c-3a25-4c84-af0d-c6982d333405",
+            "colId": "0d72f4b0-b46d-4d92-a8e1-1c1d69de84f6",
+            "containerId": "",
+            "name": "get-one",
+            "url": "localhost:8181/api/users/03e09c10-2186-11ee-a0cb-5bab21a5590a",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2023-09-11T07:34:27.560Z",
+            "modified": "2023-09-11T07:34:51.143Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "be6d85d0-ea0f-4912-b829-d390708affe6",
+            "colId": "0d72f4b0-b46d-4d92-a8e1-1c1d69de84f6",
+            "containerId": "",
+            "name": "edit-one",
+            "url": "localhost:8181/api/users/03e09c10-2186-11ee-a0cb-5bab21a5590a",
+            "method": "PUT",
+            "sortNum": 50000,
+            "created": "2023-09-11T07:35:34.002Z",
+            "modified": "2023-09-11T07:37:05.000Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"israel@gmail.com\",\n  \"password\":\"Harabi@770\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "42bcc78c-97ec-4f50-a8ce-b19a050b60f4",
+            "colId": "0d72f4b0-b46d-4d92-a8e1-1c1d69de84f6",
+            "containerId": "",
+            "name": "delete-one",
+            "url": "localhost:8181/api/users/12ddd310-5005-11ee-98a5-6b460fe7b768",
+            "method": "DELETE",
+            "sortNum": 60000,
+            "created": "2023-09-11T07:38:35.447Z",
+            "modified": "2023-09-11T07:39:02.960Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "96692828-765b-452a-8db1-a19d2c844652",
+            "colId": "0d72f4b0-b46d-4d92-a8e1-1c1d69de84f6",
+            "containerId": "",
+            "name": "add-product",
+            "url": "localhost:8181/api/users/add-product/3ac838a0-5075-11ee-ae06-83d6f8684a19?product=iPhone 9",
+            "method": "POST",
+            "sortNum": 70000,
+            "created": "2023-09-11T07:43:45.660Z",
+            "modified": "2023-09-11T07:47:00.319Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "product",
+                    "value": "iPhone 9",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        }
+    ]
+}

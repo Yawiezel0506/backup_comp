@@ -1,0 +1,97 @@
+1) micro services - the problem.
+2) k8s components - the soulution.
+
+3) kind of components:
+   *) pods: box for one container or more.
+   *) service: constantive ip/dns for pod, 
+	# external-api vs internal-db.
+	# ingres: like a domain for url - important for load balancing - for external.
+   *) configMap: save the configuration, benefits => less restarts for the application.
+   *) secret: like configMap but for more secure data (base 64 encoded) like username an pwd.
+	# both of them can be use with env vars or properties file.
+   *) volumes (local / remote) - backup of the k8s cluster.
+   *) node / deployment - copy of the app that connect to the service (like blueprint for the app).
+	# know as deployment .
+   *) statefulSet - deployment for DB - controll also the read and write of the db to not be lost info!
+	# usually we prefare to store db outside the k8s cluster.
+
+4) worker node architecture:
+   *) container runtime - foe example- docker.
+   *) kublet - make the connection between the workernode and the container runtime.
+   *) kublet proxy - make sure that connection will be from the same node and not will go to other nodes.
+
+5) control plane:
+   *) node the mange a few nodes
+      # include 4 basic tools:
+	1) API Server - the auth and connection (rest) to all the nodes bellow.
+	2) etcd - save all the node info and stst (not the data).
+	3) Scheduler - smart tool that where to create each pod.
+	4) controller manager - smart tool that help to manage all the node pods and services in the plane.	
+
+6) control vs node:
+   *) the controll take less cpu becouse isi just manage the work of the worker-node.
+   *) usually we will nede more worker nodes as are app get bigger, but we will need more controlls also.
+
+
+7) summary:
+   *) deployment - manage :
+         *) replicaset (pods manager) - manage:
+		        *) pods (container manager) - manage:
+			            container.
+   
+
+
+/////////////////////////////////////////////////////////////////////////////
+
+
+common cmd:
+
+#k8s
+alias k="kubectl"
+#k8a status
+alias ki="kubectl cluster-info"
+alias kn="kubectl get nodes"
+alias kp="kubectl get pods --all-namespaces"
+alias kd="kubectl get deployments"
+alias kr="kubectl get replicaset"
+alias kv="kubectl version"
+#k8s deploy/edit/del
+alias kc="kubectl create"
+alias kcd="kubectl create deployment"
+alias kdd="kubectl delete deployment"
+alias ked="kubectl edit deployment"
+alias ka="kubectl apply -f"
+#k8s dbg
+alias kl="kubectl logs"
+alias kdp="kubectl describe pod"
+alias krit="kubectl exec -it"
+
+
+//////////////////////////////////////////////////////////////////////////////////
+
+
+k8s file:
+
+# k8s file contains 3 basic parts:
+	1) meta data.
+	2) spec - which specifize the node structure.
+	3) status - came from the etcd that we show prev.
+
+
+# spec:
+	contains the templete which is a new deployment for pods with own spec.
+
+
+# labels (key: value):
+	we have it 3 times - deployment label, selector, and on template.
+		*) on the template we make that for to identify the pods.
+		*) on the selector we tell the deployment to collect all the podts with this key.
+		*) finally - the deployment label create for service components that want to connect the pods throw the deployment,
+			to know which key the pods have.
+
+
+# ports:
+	*) templete have is own port.
+	*) service have protocol, own port, and target port.
+
+### on service component there is no template becouse is not controll or create pods.

@@ -1,0 +1,289 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=~/bin:$PATH
+
+
+# Path to your oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
+
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+ZSH_THEME="powerlevel10k/powerlevel10k"
+
+
+# Set list of themes to pick from when loading at random
+# Setting this variable when ZSH_THEME=random will cause zsh to load
+# a theme from this variable instead of looking in $ZSH/themes/
+# If set to an empty array, this variable will have no effect.
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
+
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
+
+# Uncomment one of the following lines to change the auto-update behavior
+# zstyle ':omz:update' mode disabled  # disable automatic updates
+# zstyle ':omz:update' mode auto      # update automatically without asking
+# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
+
+# Uncomment the following line to change how often to auto-update (in days).
+# zstyle ':omz:update' frequency 13
+
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS="true"
+
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
+
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+# You can also set it to another string to have that shown instead of the default red dots.
+# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
+# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
+# COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
+# HIST_STAMPS="mm/dd/yyyy"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Which plugins would you like to load?
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(zsh-autosuggestions)
+
+source $ZSH/oh-my-zsh.sh
+
+# User configuration
+
+# export MANPATH="/usr/local/man:$MANPATH"
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+#
+### ALIASES ###
+#basic
+alias c="clear"
+alias e="exit"
+
+# navigation
+up () {
+local d=""
+local limit="$1"
+
+# Default to limit of 1
+if [ -z "$limit" ] || [ "$limit" -le 0 ]; then
+   limit=1
+   fi
+
+   for ((i=1;i<=limit;i++)); do
+   d="../$d"
+   done
+ 
+   # perform cd. Show error if cd fails
+   if ! cd "$d"; then
+   echo "Couldn't go up $limit dirs.";
+   fi
+}
+ 
+#apt
+alias aptup='sudo apt update && sudo apt upgrade'
+alias aptupd='sudo apt update'
+alias aptupg='sudo apt upgrade'
+
+alias aptin='sudo apt install'
+alias aptrm='sudo apt remove'
+
+ 
+#fs
+alias ls='ls -lah --color=auto'
+ 
+alias .='cd ..'
+alias ..='cd ../..'
+alias ...='cd ../../..'
+
+alias myp='cd /home/yonathan/Desktop/my-computer/my-programs'
+alias k8s="cd /home/yonathan/Desktop/my-computer/my-programs/kodcode/docker/k8s"
+
+alias open='nautilus'
+ 
+alias mkdir='mkdir -pv'
+ 
+alias mv='mv -i'
+alias cp='cp -i'
+alias rm='rm -i'
+alias ln='ln -i'
+
+alias rmnm="rm -rf node_modules"
+#system
+alias mysys="neofetch"
+
+#npm
+alias npmi="npm install"
+alias npmu="npm uninstall"
+alias npmid="npm install -D"
+alias npmud="npm uninstall -D"
+
+
+#docker
+alias d="docker"
+alias drmi='docker image rm -f $(docker image ls -q)'
+alias drmc='docker container rm -f $(docker container ls -aq)'
+alias drmv="docker volume prune"
+alias drmn="docker network prune"
+alias drm="docker rm"
+alias drmf="docker rm -f"
+alias dr="docker run"
+alias drr="docker run --rm"
+alias drd="docker run -d --rm"
+alias dp="docker pull"
+alias di="docker images"
+alias dc="docker ps -a"
+alias dl="docker logs -f"
+alias dcm="docker-compose"
+alias dcmr="docker-compose restart"
+alias dcmd="docker-compose down"
+alias dcmu="docker-compose up -d"
+
+#minikube
+
+alias mk="minikube"
+alias mks="minikube service"
+alias mki="minikube addons enable ingress"
+alias mkst="minikube stop"
+alias mkd="minikube delete"
+alias mks="minikube start"
+
+#k8s
+alias k="kubectl"
+#k8a status
+alias ki="kubectl cluster-info"
+alias kg="kubectl get"
+alias kga="kubectl get all"
+alias kgn="kubectl get nodes"
+alias kgp="kubectl get pods --all-namespaces"
+alias kgpl="kubectl get pods --all-namespaces --show-labels"
+alias kgpm="kubectl get pods --all-namespaces -o wide"
+alias kgd="kubectl get deployments"
+alias kgs="kubectl get service"
+alias kgss="kubectl get statefulset"
+alias kgr="kubectl get replicaset"
+alias kv="kubectl version"
+#k8s deploy/edit/del
+alias kc="kubectl create"
+alias kcd="kubectl create deployment"
+alias kd="kubectl delete"
+alias kdd="kubectl delete deployment"
+alias kds="kubectl delete service"
+alias ke="kubectl edit"
+alias ked="kubectl edit deployment"
+alias ka="kubectl apply -f"
+#k8s dbg
+alias kl="kubectl logs"
+alias kds="kubectl describe"
+alias kdsp="kubectl describe pod"
+alias kdss="kubectl describe service"
+alias krit="kubectl exec -it"
+#k8s namespaces
+alias kgns="kubectl get namespace"
+alias kcns="kubectl create namespace"
+alias kdns="kubectl delete namespace"
+
+# switch between shells
+#alias tobash="sudo chsh $USER -s /bin/bash && echo 'Now log out.'"
+#alias tozsh="sudo chsh $USER -s /bin/zsh && echo 'Now log out.'"
+#alias tofish="sudo chsh $USER -s /bin/fish && echo 'Now log out.'"
+ 
+# git
+#alias addup='git add -u'
+alias gaa='git add .'
+#alias branch='git branch'
+alias gch='git checkout'
+alias gcl='git clone'
+alias gcm='git commit -m'
+#alias fetch='git fetch'
+alias gpom='git pull origin main'
+alias gpom='git push origin main'
+alias gpfom="git push -f origin main"
+alias gs='git status'  # 'status' is protected name so using 'stat' instead
+#alias tag='git tag'
+#alias newtag='git tag -a'
+
+# Colorize grep output (good for log files)
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+
+#cool stuff
+alias cool='cmatrix'
+alias cool2="docker run --rm -it bcbcarl/hollywood" 
+alias csd="sudo poweroff"
+alias chrome="google-chrome"
+alias storage="ncdu"
+alias cooltext="figlet"
+
+#redis
+alias rcli="cat ~/redis_commands.conf && redis-cli"
+alias rstop="sudo systemctl stop redis-server"    # Stop Redis
+alias rstart="sudo systemctl start redis-server"   # Start Redis
+alias rrestart="sudo systemctl restart redis-server" # Restart Redis
+alias rstatus="sudo systemctl status redis-server" #Redis Status
+ 
+#alias reload='set -x; source .zshrc; set +x'
+alias reload="source .zshrc"
+ 
+alias aliases='vim .zshrc'
+                              
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+

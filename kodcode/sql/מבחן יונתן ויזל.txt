@@ -1,0 +1,73 @@
+
+-- 1)
+
+SELECT * FROM employees
+
+-- 2)
+
+SELECT COUNT(products.product_id)
+FROM products
+
+-- 3)
+
+SELECT e.first_name, e.last_name, city
+FROM employees as e
+WHERE e.country = 'USA'
+AND e.city <> 'Seattle'
+
+-- 4)
+
+SELECT *
+FROM products as p
+WHERE p.supplier_id = 2
+ORDER BY p.unit_price DESC
+LIMIT 3
+
+-- 5)
+
+SELECT c.category_id
+FROM categories as c
+WHERE c.category_id IN (
+    SELECT category_id 
+    FROM products
+    GROUP BY category_id
+    HAVING COUNT(product_id) > 10
+)
+
+-- 6)
+
+SELECT c.category_name
+FROM categories as c
+WHERE c.category_id IN (
+    SELECT category_id 
+    FROM products
+    GROUP BY category_id
+    HAVING COUNT(product_id) > 10
+)
+
+-- 7)
+
+SELECT c.category_name, AVG(p.unit_price) as average
+FROM categories as c
+INNER JOIN products as p ON c.category_id = p.category_id
+GROUP BY category_name
+ORDER BY average DESC
+LIMIT 5
+
+-- 8)
+
+SELECT e.first_name, e.last_name, t.territory_description
+FROM employees as e
+LEFT JOIN employee_territories as et ON et.employee_id = e.employee_id
+LEFT JOIN territories as t ON et.territory_id = t.territory_id
+
+-- 9)
+
+SELECT *
+FROM (
+    SELECT e.first_name, e.last_name, COUNT(o.order_id) as num_of_orders
+    FROM employees as e
+    LEFT JOIN orders as o ON o.employee_id = e.employee_id
+    GROUP BY e.first_name, e.last_name
+) as sq
+WHERE sq.num_of_orders > 100

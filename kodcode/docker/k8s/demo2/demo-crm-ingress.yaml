@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: demo-crm
+spec:
+  rules:
+    - host: ysw-ingress.ddns.net
+      http:
+        paths:
+          - pathType: Prefix
+            path: /
+            backend:
+              service:
+                name: democrm-service
+                port:
+                  number: 3000

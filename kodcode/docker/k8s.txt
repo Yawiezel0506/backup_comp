@@ -1,0 +1,79 @@
+1) micro services - the problem.
+2) k8s components - the soulution.
+
+3) kind of components:
+   *) pods: box for one container or more.
+   *) service: constantive ip/dns for pod, 
+	# external-api vs internal-db.
+	# ingres: like a domain for url - important for load balancing - for external.
+   *) configMap: save the configuration, benefits => less restarts for the application.
+   *) secret: like configMap but for more secure data (base 64 encoded) like username an pwd.
+	# both of them can be use with env vars or properties file.
+   *) volumes (local / remote) - backup of the k8s cluster.
+   *) node / deployment - copy of the app that connect to the service (like blueprint for the app).
+	# know as deployment .
+   *) statefulSet - deployment for DB - controll also the read and write of the db to not be lost info!
+	# usually we prefare to store db outside the k8s cluster.
+
+4) worker node architecture:
+   *) container runtime - foe example- docker.
+   *) kublet - make the connection between the workernode and the container runtime.
+   *) kublet proxy - make sure that connection will be from the same node and not will go to other nodes.
+
+5) control plane:
+   *) node the mange a few nodes
+      # include 4 basic tools:
+	1) API Server - the auth and connection (rest) to all the nodes bellow.
+	2) etcd - save all the node info and stst (not the data).
+	3) Scheduler - smart tool that where to create each pod.
+	4) controller manager - smart tool that help to manage all the node pods and services in the plane.	
+
+6) control vs node:
+   *) the controll take less cpu becouse isi just manage the work of the worker-node.
+   *) usually we will nede more worker nodes as are app get bigger, but we will need more controlls also.
+
+in conclusion:
+api-server manage deployments:
+	deployment manage replicaset,
+		replicaset manage pods,
+			pods manage containers.
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+BASIC K8s COMMANDS:
+
+#k8s
+alias k="kubectl"
+#k8a status
+alias ki="kubectl cluster-info"
+alias kg="kubectl get"
+alias kgn="kubectl get nodes"
+alias kgp="kubectl get pods --all-namespaces"
+alias kgpm="kubectl get pods --all-namespaces -o wide"
+alias kgd="kubectl get deployments"
+alias kgs="kubectl get service"
+alias kgr="kubectl get replicaset"
+alias kv="kubectl version"
+#k8s deploy/edit/del
+alias kc="kubectl create"
+alias kcd="kubectl create deployment"
+alias kd="kubectl delete -f"
+alias kdd="kubectl delete deployment"
+alias ke="kubectl edit"
+alias ked="kubectl edit deployment"
+alias ka="kubectl apply -f"
+#k8s dbg
+alias kl="kubectl logs"
+alias kds="kubectl describe"
+alias kdsp="kubectl describe pod"
+alias kdss="kubectl describe service"
+alias krit="kubectl exec -it"
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+

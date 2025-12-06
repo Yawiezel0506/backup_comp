@@ -1,0 +1,10 @@
+architecture: replicaset
+auth:
+  enabled: true
+  rootUser: root
+  rootPassword: "yawiezel"
+replicaCount: 3
+persistence:
+  size: 1Gi
+arbiter:
+  enabled: false

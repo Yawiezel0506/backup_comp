@@ -1,0 +1,12 @@
+# Ignore Python bytecode files
+__pycache__
+
+# Ignore Node.js modules
+node_modules/
+
+# Ignore development-specific files
+*.log
+*.db
+
+# Ignore version control files
+.git/

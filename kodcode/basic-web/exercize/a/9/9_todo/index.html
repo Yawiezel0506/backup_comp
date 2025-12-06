@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="vh-100" style="background-color: #e2d5de">
+      <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col col-xl-10">
+            <div class="card" style="border-radius: 15px">
+              <div class="card-body p-5">
+                <h6 class="mb-3">YSW Todo List</h6>
+                <div
+                  class="d-flex justify-content-center align-items-center mb-4"
+                >
+                  <div class="form-outline flex-fill">
+                    <input
+                      type="text"
+                      id="text_inp"
+                      class="form-control form-control-lg"
+                      placeholder="What do you need to do today?"
+                    />
+                  </div>
+                  <button id="add_btn" class="btn btn-primary btn-lg ms-2">
+                    Add
+                  </button>
+                </div>
+                <ul id="todo_list" class="list-group mb-0"></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="index.js"></script>
+  </body>
+</html>

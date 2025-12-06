@@ -1,0 +1,147 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "trip-project",
+    "dateExported": "2023-09-05T07:20:58.834Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "0063c6f9-588e-4b01-a015-70b6e9e2f1ab",
+            "colId": "c68e733b-e600-46b4-a31b-5645446c6949",
+            "containerId": "",
+            "name": "get-all",
+            "url": "localhost:3000/api/trips",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-09-05T06:53:03.473Z",
+            "modified": "2023-09-05T06:54:35.042Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "e11ef0a3-6ba6-4bff-95c5-ab47935379e2",
+            "colId": "c68e733b-e600-46b4-a31b-5645446c6949",
+            "containerId": "",
+            "name": "get-one",
+            "url": "localhost:3000/api/trips/1",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-09-05T06:54:57.398Z",
+            "modified": "2023-09-05T06:55:04.449Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "5e243f1e-244b-4c52-9c0a-fd598a7514e0",
+            "colId": "c68e733b-e600-46b4-a31b-5645446c6949",
+            "containerId": "",
+            "name": "create-one",
+            "url": "localhost:3000/api/trips",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2023-09-05T06:55:41.828Z",
+            "modified": "2023-09-05T06:59:12.365Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "test-token"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"New trip\",\n  \"destination\": \"New Dest\",\n  \"startDate\": \"2024-01-01\",\n  \"endDate\": \"2024-01-10\",\n  \"description\": \"New Description\",\n  \"price\": 1500,\n  \"image\": \"new image\",\n  \"activities\": [\"1\", \"2\"]\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "ea9e0f69-8427-4beb-a263-ade091910aa5",
+            "colId": "c68e733b-e600-46b4-a31b-5645446c6949",
+            "containerId": "",
+            "name": "update-one",
+            "url": "localhost:3000/api/trips/1",
+            "method": "PUT",
+            "sortNum": 50000,
+            "created": "2023-09-05T07:03:21.650Z",
+            "modified": "2023-09-05T07:05:25.650Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "test-token"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"New trip\",\n  \"destination\": \"New Dest\",\n  \"startDate\": \"2024-01-01\",\n  \"endDate\": \"2024-01-10\",\n  \"description\": \"New Description\",\n  \"price\": 1500,\n  \"image\": \"new image\",\n  \"activities\": [\"1\", \"2\"]\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "888bd465-b11a-481f-a892-4680041226b3",
+            "colId": "c68e733b-e600-46b4-a31b-5645446c6949",
+            "containerId": "",
+            "name": "delete-one",
+            "url": "localhost:3000/api/trips/2",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2023-09-05T07:07:26.190Z",
+            "modified": "2023-09-05T07:08:19.300Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "test-token"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "7024dc59-5a1e-4053-a082-d938d36ad85a",
+            "colId": "c68e733b-e600-46b4-a31b-5645446c6949",
+            "containerId": "",
+            "name": "create-user",
+            "url": "localhost:3000/api/auth/register",
+            "method": "POST",
+            "sortNum": 70000,
+            "created": "2023-09-05T07:09:58.793Z",
+            "modified": "2023-09-05T07:13:05.451Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "test-token"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"newuser@gmail.com\",\n  \"password\": \"pass1234\",\n  \"role\": \"admin\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "9930847b-7ae7-40df-9343-6a131bb1d13e",
+            "colId": "c68e733b-e600-46b4-a31b-5645446c6949",
+            "containerId": "",
+            "name": "login",
+            "url": "localhost:3000/api/auth/login",
+            "method": "POST",
+            "sortNum": 80000,
+            "created": "2023-09-05T07:15:55.639Z",
+            "modified": "2023-09-05T07:18:30.830Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"newuser@gmail.com\",\n  \"password\": \"pass1234\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}
